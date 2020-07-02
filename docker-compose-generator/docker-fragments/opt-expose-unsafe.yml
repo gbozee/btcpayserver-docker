@@ -4,4 +4,4 @@ version: "3"
 services:
   bitcoind:
       ports:
-        - "92287:43782"
+       - "0.0.0.0:92287:43782"
