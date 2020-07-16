@@ -159,6 +159,12 @@ services:
       HIDDENSERVICE_PORT: 50002
       HIDDENSERVICE_VIRTUAL_PORT: 50002
 
+  nbxplorer:
+    environment:
+      HIDDENSERVICE_NAME: nbxplorer
+      HIDDENSERVICE_PORT: 32838
+      HIDDENSERVICE_VIRTUAL_PORT: 32838
+
 volumes:
     tor_datadir:
     tor_torrcdir:
