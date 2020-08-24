@@ -323,7 +323,7 @@ namespace DockerFileBuildHelper
                 case "eclair":
                     dockerInfo.DockerFilePath = $"Dockerfile";
                     dockerInfo.GitLink = "https://github.com/ACINQ/eclair";
-                    dockerInfo.GitRef = $"{image.Tag}";
+                    dockerInfo.GitRef = $"v{image.Tag.Substring("release-".Length)}";
                     break;
                 case "groestlcoin/eclair":
                     dockerInfo.DockerFilePath = $"Dockerfile";
@@ -410,7 +410,8 @@ namespace DockerFileBuildHelper
                     dockerInfo.DockerFilePathARM32v7 = "arm32v7.Dockerfile";
                     dockerInfo.DockerFilePathARM64v8 = "arm64v8.Dockerfile";
                     dockerInfo.GitLink = "https://github.com/btcpayserver/btcpayserver";
-                    dockerInfo.GitRef = $"v{image.Tag}";
+                    // v1.0.5.4$<BTCPAY_BUILD_CONFIGURATION>
+                    dockerInfo.GitRef = $"v{image.Tag.Substring(0, image.Tag.IndexOf('$'))}";
                     dockerInfo.SupportedByUs = true;
                     break;
                 case "rtl":
